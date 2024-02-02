@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>360</width>
-    <height>800</height>
+    <height>653</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,13 +16,20 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout" stretch="1,10">
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="1,10,0">
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="QLineEdit" name="urlEdit"/>
+        <widget class="QLineEdit" name="urlEdit">
+         <property name="minimumSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QToolButton" name="pasteButton">
@@ -33,6 +40,12 @@
           <iconset>
            <normalon>:/icon/icon/粘贴.png</normalon>
           </iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
          </property>
         </widget>
        </item>
@@ -45,6 +58,12 @@
           <iconset>
            <normalon>:/icon/icon/下载.png</normalon>
           </iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>32</width>
+           <height>32</height>
+          </size>
          </property>
         </widget>
        </item>
@@ -102,10 +121,81 @@ QListWidget#listWidget
      </item>
     </layout>
    </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="QToolButton" name="exitButton">
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset>
+         <normalon>:/icon/icon/关闭.png</normalon>
+        </iconset>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="mergeButton">
+       <property name="minimumSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>merge</string>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>32</width>
+         <height>32</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
   </layout>
  </widget>
  <resources>
   <include location="../res/resource.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>exitButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Downloader</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>25</x>
+     <y>629</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>22</x>
+     <y>668</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

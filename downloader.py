@@ -14,8 +14,8 @@ from typing import Optional
 
 import requests
 from Crypto.Cipher import AES
-from PyQt5.QtCore import QThread, pyqtSignal
-from PyQt5.QtWidgets import QWidget, QApplication, QListWidgetItem
+from PySide6.QtCore import QThread, pyqtSignal
+from PySide6.QtWidgets import QWidget, QApplication, QListWidgetItem
 
 from ui.ui_downloader import Ui_Downloader
 # os.system(r'"D:\Python\Python Data\Scripts\pyrcc5.exe" resource.qrc -o resource_rc.py')

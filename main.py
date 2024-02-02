@@ -1,16 +1,15 @@
-import os.path
+import os
 import sys
-from pathlib import Path
+from tkinter import Tk
 
-from PyQt5.QtCore import QSize
-from PyQt5.QtGui import QClipboard
-from PyQt5.QtWidgets import QApplication, QListWidgetItem, QWidget, QDialog
+from PySide6.QtCore import QSize
+from PySide6.QtWidgets import QApplication, QListWidgetItem, QWidget, QDialog, QFileDialog
 
 from ui import ui_download_config
-from utils.prepare import prepare
 from ui.ui_downloader import Ui_Downloader
 from ui.ui_state_widget import Ui_stateWidget
 from utils.downloader import DownloadThread, get_store_path
+from utils.merge import merge_files
 
 
 class Main(QWidget):
@@ -27,13 +26,23 @@ class Main(QWidget):
         self.setup()
 
     def paste_url(self):
-        clipboard = QApplication.clipboard()
-        url = clipboard.text()
+        root = Tk()
+        url = root.clipboard_get()
         self.ui.urlEdit.setText(url)
 
     def setup(self):
         self.ui.pasteButton.clicked.connect(self.paste_url)
         self.ui.downloadButton.clicked.connect(self.show_config_dialog)
+        self.ui.mergeButton.clicked.connect(self.merge_ts)
+
+    def merge_ts(self):
+        path = QFileDialog.getExistingDirectory(self, "merge directory", "./store")
+
+        if path:
+            os.chdir("ts")
+            serial_num = path.rsplit("/", 1)[-1]
+            merge_files(serial_num)
+            os.chdir("../")
 
     def show_config_dialog(self):
         url = self.ui.urlEdit.text()
@@ -82,4 +91,4 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     downloader = Main()
     downloader.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec())

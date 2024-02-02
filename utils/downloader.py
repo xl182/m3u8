@@ -5,7 +5,7 @@ from threading import Thread
 
 import requests
 from Crypto.Cipher import AES
-from PyQt5.QtCore import pyqtSignal, QThread, QTimer
+from PySide6.QtCore import Signal, QThread
 
 from utils import analyzer
 
@@ -20,7 +20,7 @@ def get_store_path():
 
 
 class DownloadThread(QThread):
-    signal = pyqtSignal(str, str)
+    signal = Signal(str, str)
     MAX_THREAD_NUM = 20
 
     def __init__(self, url, download_mode, store_path):

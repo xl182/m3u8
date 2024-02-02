@@ -1,5 +1,8 @@
 def merge_files(name):
     import os
+    if not os.listdir("../store/" + name):
+        return
+
     with open("../ts/" + name + ".ts", "wb") as l_f:
         file_list = os.listdir("../store/" + name)
         file_list.sort(key=lambda x: int(x.replace(".ts", "")) if ".ts" in x else 0)
@@ -12,5 +15,5 @@ def merge_files(name):
 
 
 if __name__ == "__main__":
-    name = str(input("dir name:"))
-    merge_files(name)
+    n = str(input("dir name:"))
+    merge_files(n)

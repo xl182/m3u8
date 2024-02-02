@@ -6,5 +6,7 @@
 ui_dir = "../ui"
 qrc_dir = "../res"
 qrc_path = "../src/resource.qrc"
-uic_path = r'"D:/Program Files/Anaconda3/envs/tool/Scripts/pyuic5.exe"'
-rcc_path = r'"D:/Program Files/Anaconda3/envs/tool/Scripts/pyrcc5.exe"'
+# uic_path = r'"D:/Program Files/Anaconda3/envs/tool/Scripts/pyuic5.exe"'
+# rcc_path = r'"D:/Program Files/Anaconda3/envs/tool/Scripts/pyrcc5.exe"'
+uic_path = r'"D:/Program Files/Anaconda3/Scripts/pyside6-uic.exe"'
+rcc_path = r'"D:/Program Files/Anaconda3/Scripts/pyside6-rcc.exe"'
