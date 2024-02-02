@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Downloader</class>
+ <widget class="QWidget" name="Downloader">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>360</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="1,10">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLineEdit" name="urlEdit"/>
+       </item>
+       <item>
+        <widget class="QToolButton" name="pasteButton">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normalon>:/icon/icon/粘贴.png</normalon>
+          </iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="downloadButton">
+         <property name="text">
+          <string/>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normalon>:/icon/icon/下载.png</normalon>
+          </iconset>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="0">
+     <item>
+      <widget class="QListWidget" name="infoWidget">
+       <property name="styleSheet">
+        <string notr="true">QListView 
+{
+      show-decoration-selected: 1;
+}
+ 
+QListView::item:alternate 
+{
+      background: #EEEEEE;
+}
+ 
+QListView::item:selected 
+{
+      border: 1px solid #d4d4d4;
+}
+ 
+QListView::item:selected:!active 
+{
+	background-color: qlineargradient(spread:pad, x1:1, y1:0.0284091, x2:0, y2:0, stop:0.278607 rgba(252, 210, 171, 255), stop:1 rgba(255, 255, 255, 255));
+}
+ 
+QListView::item:selected:active
+{
+	background-color: qlineargradient(spread:pad, x1:1, y1:0.0284091, x2:0, y2:0, stop:0.278607 rgba(245, 252, 171, 255), stop:1 rgba(255, 255, 255, 255));
+}
+ 
+QListView::item:hover
+{
+      background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                  stop: 0 #FAFBFE, stop: 1 #DCDEF1);
+}
+
+//适用于开启交替颜色
+QListWidget#listWidget
+{
+    alternate-background-color:blue;
+	background:yellow
+}</string>
+       </property>
+       <property name="currentRow">
+        <number>-1</number>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../res/resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

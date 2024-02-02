@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>icon/m3u8.png</file>
+    <file>icon/下载.png</file>
+    <file>icon/粘贴.png</file>
+  </qresource>
+</RCC>
